@@ -1,7 +1,6 @@
 
-const MCQ = ({ question, options, onSelect}) => {
-    // console.log(question, options, onSelect);
-    console.log("mcq render");
+const MCQ = ({ question, options, onSelect,isSelected}) => {
+  const address = "Enter your complete address with PIN Code";
   return (
     <div className="bg-white shadow-md rounded-md p-6 m-0">
       {/* Question */}
@@ -15,6 +14,7 @@ const MCQ = ({ question, options, onSelect}) => {
               id={`option-${index}`}   
               name="mcq-option"
               value={option}
+              checked={(option === isSelected) ? true : false}
               onChange={() => onSelect(option)}
               className="mr-2"
             />

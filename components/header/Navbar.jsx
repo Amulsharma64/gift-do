@@ -6,7 +6,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* Left side: Company Name */}
         <div className="flex items-center">
-          <span className="text-white text-xl font-bold">Company Name</span>
+          <span className="text-white text-xl font-bold">GiftDo</span>
         </div>
         {/* Right side: Menu Items */}
         <div className="flex items-center space-x-4">
