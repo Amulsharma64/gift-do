@@ -2,11 +2,15 @@
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import MCQ from "./Mcq";
+import { useRouter } from "next/navigation";
+import Button from "../Button";
 
 const McqContainer = () => {
     const [rawData, setRawData] = useState({});
     const [count, setCount] = useState(0);
     const [selectedOption, setSelectedOption] = useState(null);
+    const router = useRouter();
+
   
     const data = useMemo(() => [
       {
@@ -51,6 +55,7 @@ const McqContainer = () => {
   
     const handleSubmit = () => { 
       console.log(rawData);
+      router.push("/results");
     }
   return (
     <main className="flex min-h-screen flex-col items-center ">
@@ -60,9 +65,11 @@ const McqContainer = () => {
         onSelect={handleSelectOption}
         isSelected={selectedOption}
       />
-      {
-        data.length - 1 > count ? <button className="mt-4" onClick={handleNext}>Next</button> : <button className="mt-4" onClick={handleSubmit}>Submit</button>
-      }
+      <div className="mt-2">
+        {
+          data.length - 1 > count ? <Button handleButton={handleNext} name="Next"/> : <Button handleButton={handleSubmit} name={"Submit"}/>
+        }
+      </div>
       {selectedOption && (
         <p className="mt-1 text-orange-400">You selected: {selectedOption}</p>
       )}
