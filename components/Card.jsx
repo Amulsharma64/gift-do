@@ -1,9 +1,13 @@
-import React from 'react'
+"use client"
 import Image from "next/image";
+import Button from './Button';
 
 const Card = () => {
+  const handleClick = () =>{
+    console.log("click");
+  }
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg m-5">
+    <div className="relative max-w-sm rounded overflow-hidden shadow-lg m-5">
         <Image 
             className="w-full" 
             src="/images/blueEaring.png" 
@@ -12,16 +16,8 @@ const Card = () => {
             height={400}
             priority={true}
         />
-        <div className="px-6 py-4">
-            <div className="font-bold text-xl mb-2">The Coldest Sunset</div>
-            <p className="text-gray-700 text-base">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.
-            </p>
-        </div>
-        <div className="px-6 pt-4 pb-2">
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+        <div className='mt-3'>
+          <Button name={"Buy Now"} handleButton={handleClick}/>
         </div>
     </div>
   )
