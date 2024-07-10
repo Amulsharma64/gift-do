@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image";
 import Button from './Button';
+import BuyProduct from "./rozarpay/BuyProduct";
 
 const Card = () => {
   const handleClick = () =>{
@@ -16,8 +17,9 @@ const Card = () => {
             height={400}
             priority={true}
         />
-        <div className='mt-3'>
-          <Button name={"Buy Now"} handleButton={handleClick}/>
+        <div className='mt-3 text-center'>
+          {/* <Button name={"Buy Now"} handleButton={handleClick}/> */}
+          <BuyProduct />
         </div>
     </div>
   )
