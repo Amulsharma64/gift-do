@@ -8,14 +8,14 @@ import Loading from "../../app/loading";
 const BuyProduct = () => {
 
   const router = useRouter()
-
+  const backendUrl = process.env.BACKEND_URL;
 
   const makePayment = async ({ productId = null }) => {
     // "use server"
     const key = process.env.RAZORPAY_API_KEY;
     console.log(key);
     // Make API call to the serverless API
-    const data = await fetch("http://localhost:3000/api/razorpay");
+    const data = await fetch(`/api/razorpay`);
     const { order } = await data.json();
     console.log(order.id);
     const options = {
@@ -30,7 +30,7 @@ const BuyProduct = () => {
         // if (response.length==0) return <Loading/>;
         console.log(response);
 
-        const data = await  fetch("http://localhost:3000/api/paymentVerify", {
+        const data = await  fetch(`/api/paymentVerify`, {
           method: "POST",
           // headers: {
           //   // Authorization: 'YOUR_AUTH_HERE'
