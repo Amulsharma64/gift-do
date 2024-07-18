@@ -8,7 +8,6 @@ import Loading from "../../app/loading";
 const BuyProduct = () => {
 
   const router = useRouter()
-  const backendUrl = process.env.BACKEND_URL;
 
   const makePayment = async ({ productId = null }) => {
     // "use server"
