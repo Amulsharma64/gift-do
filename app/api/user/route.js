@@ -4,7 +4,7 @@ import User from '../../../database/model/User'
 
 export async function GET() {
 
-//   await dbConnect();
+  await dbConnect();
 
   return NextResponse.json({ msg: "success" });
 }
@@ -15,5 +15,5 @@ export async function POST(req) {
    await dbConnect();
   const user = await User.create(body)
 
-  return NextResponse.json({ msg:"success",data: user });
+  return NextResponse.json({ msg:"success", data: user });
 }

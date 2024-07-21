@@ -11,7 +11,7 @@ const Navbar = () => {
         {/* Right side: Menu Items */}
         <div className="flex items-center space-x-4">
           <Link href="/about" className="text-white hover:text-gray-300">About</Link>
-          <Link href="/Contact" className="text-white hover:text-gray-300">Contact</Link>
+          <Link href="/contact" className="text-white hover:text-gray-300">Contact</Link>
           <Link href="/login" className="text-white hover:text-gray-300">Log in</Link>
         </div>
       </div>
